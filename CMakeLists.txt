@@ -5,10 +5,6 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Add the executable
-include_directories(.)
-add_executable(MedianContainerTask main.cpp)
-
 # Catch2
 Include(FetchContent)
 
@@ -21,5 +17,6 @@ FetchContent_MakeAvailable(Catch2)
 # // Catch2
 
 # Add the executable for tests
+include_directories(.)
 add_executable(MedianContainerTaskTests tests/MedianContainerUnitTests.cpp)
 target_link_libraries(MedianContainerTaskTests PRIVATE Catch2::Catch2WithMain)
